@@ -1,5 +1,7 @@
 # Portfolio and CV source
 
+Live [here](https://nipatiitti.com)
+
 This portfolio was made using my own custom [React boilerplate](https://github.com/nipatiitti/React-boilerplate) and is a good example of what my code looks at its (as of 2020) peak.
 
 I'm not an UI/UX designer but I did try my best to make it look pretty.
