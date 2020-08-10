@@ -1,11 +1,8 @@
-# My Custom React Boilerplate with all the goodies
+# Portfolio and CV source
 
-[![Build Status](https://travis-ci.com/nipatiitti/React-boilerplate.svg?branch=master)](https://travis-ci.com/nipatiitti/React-boilerplate.svg?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/nipatiitti//React-boilerplate/badge.svg)](https://snyk.io/test/github/nipatiitti//React-boilerplate)
+This portfolio was made using my own custom [React boilerplate](https://github.com/nipatiitti/React-boilerplate) and is a good example of what my code looks at its (as of 2020) peak.
 
-Want to try it out?
-
-[![Edit react-boilerplate](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/nipatiitti/React-boilerplate/tree/master/?fontsize=14)
+I'm not an UI/UX designer but I did try my best to make it look pretty.
 
 ## Features
 
@@ -25,17 +22,6 @@ Want to try it out?
 -   Redux, Redux-persist, Redux-thunk, Redux-axios-middleware
 -   React-Router
 -   Styled Components
-
-## Webpack Add-Ons used on this project
-
--   [SVG Icons](https://www.robinwieruch.de/react-svg-icon-components/)
--   [Images Support](https://www.robinwieruch.de/webpack-images/)
-
-## Based on
-
-This projects forks and is heavily inspired by:
-
--   [Advanced React Webpack Babel Setup](https://github.com/rwieruch/advanced-react-webpack-babel-setup)
 
 ## Installation
 
