@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 
-import Projects from './Projects'
+import Portfolio from './Portfolio'
 import Home from './Home'
 import Container from '../Components/Container'
 
@@ -42,8 +42,8 @@ const Main = () => (
             <Menu />
         </Header>
         <Switch>
-            <Route path="/projects" exact>
-                <Projects />
+            <Route path="/portfolio" exact>
+                <Portfolio />
             </Route>
             <Route path="/">
                 <Home />

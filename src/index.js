@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './Config'
 
 import App from './Routes'
+import { getProjects } from './Config/Database'
 
 const theme = {
     colors: {
@@ -15,6 +16,9 @@ const theme = {
         highlight: '#7adecd',
     },
 }
+
+// Get projects first time and make sure the database module is included in the bundle
+getProjects()
 
 const MainComponent = () => (
     <Provider store={store}>

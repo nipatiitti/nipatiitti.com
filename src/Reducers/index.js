@@ -5,11 +5,9 @@
 import { combineReducers } from 'redux'
 
 // login reducer
-import user from './user'
-import error from './error'
+import projects from './projects'
 
 // export root reducer
 export default combineReducers({
-    user,
-    error,
+    projects,
 })

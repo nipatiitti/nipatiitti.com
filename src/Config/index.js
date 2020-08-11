@@ -1,13 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-
-/**
- * Configure redux store and axios middleware
- */
-
 import { createStore, applyMiddleware, compose } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
+
+import firebase from 'firebase'
+import 'firebase/firestore'
 
 import axios from 'axios'
 import axiosMiddleware from 'redux-axios-middleware'
@@ -29,6 +27,20 @@ const persistConfig = {
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+const firebaseConfig = {
+    apiKey: 'AIzaSyD5FMhzh9Kigkh72fRaQ_fHW_D7L6De_G4',
+    authDomain: 'nipatiittidotcom.firebaseapp.com',
+    databaseURL: 'https://nipatiittidotcom.firebaseio.com',
+    projectId: 'nipatiittidotcom',
+    storageBucket: 'nipatiittidotcom.appspot.com',
+    messagingSenderId: '715492646399',
+    appId: '1:715492646399:web:815e0548a1264a10979bca',
+    measurementId: 'G-NDWNQ53GE2',
+}
+
+firebase.initializeApp(firebaseConfig)
+firebase.analytics()
+
 // Define redux middleware to use
 const tools = [applyMiddleware(thunk, axiosMiddleware(client))]
 
@@ -40,4 +52,4 @@ if (process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION_
 const store = createStore(persistedReducer, compose(...tools))
 const persistor = persistStore(store)
 
-export { store, persistor }
+export { store, persistor, firebase }

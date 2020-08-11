@@ -6,6 +6,8 @@ const Span = styled.span`
 `
 
 const P = styled.p`
+    text-align: center;
+    font-size: 1.4em;
     color: ${({ theme }) => theme.colors.main};
 `
 const H1 = styled.h1`
@@ -18,6 +20,7 @@ const H1 = styled.h1`
         -webkit-text-stroke-color: ${({ theme }) => theme.colors.highlight};
     }
 
+    text-align: center;
     font-size: 4em;
     margin: 0.1em;
 `

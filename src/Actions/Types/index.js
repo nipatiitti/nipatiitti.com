@@ -1,4 +1,4 @@
 import * as auth from './authTypes'
-import * as error from './errorTypes'
+import * as projects from './projectsTypes'
 
-export { auth, error }
+export { auth, projects }
