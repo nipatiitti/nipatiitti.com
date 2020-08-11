@@ -8,9 +8,10 @@ I'm not an UI/UX designer but I did try my best to make it look pretty.
 
 ---
 
-Small things I'm proud of in this project:
+#### Small things I'm proud of in this project:
 
 -   All the Menu animations are 0 repaint animations (-> they don't trigger any repaints -> Butter smooth 60fps)
+-   How well the site behaves on big and small screen and everything between. I used css grid and media queries for this.
 
 ---
 
