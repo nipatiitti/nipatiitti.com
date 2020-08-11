@@ -21,6 +21,12 @@ const Header = styled(Container)`
     width: 100%;
 `
 
+const CustomNavLink = styled(NavLink)`
+    &:focus {
+        border-bottom: 2px solid ${({ theme }) => theme.colors.highlight};
+    }
+`
+
 const Img = styled.img`
     height: 4em;
     width: auto;
@@ -30,9 +36,9 @@ const Img = styled.img`
 const Main = () => (
     <Router>
         <Header direction="row" content="space-between">
-            <NavLink to="/">
+            <CustomNavLink to="/">
                 <Img src={Icon} alt="icon" />
-            </NavLink>
+            </CustomNavLink>
             <Menu />
         </Header>
         <Switch>

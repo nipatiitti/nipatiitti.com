@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade'
+import { NavLink } from 'react-router-dom'
 
 import Container from '../../Components/Container'
 import { Span, H1 } from '../../Components/Text'
 import Grid from '../../Components/Grid'
 
 import Picture from '../../Assets/profile_picture.png'
+import Button, { GhostButton } from '../../Components/Button'
 
 const Main = styled(Grid)`
     height: calc(100% - 5em);
@@ -33,6 +35,14 @@ const Home = () => (
             <Fade right>
                 <H1>Developer</H1>
                 <Span>&amp; University student from Finland</Span>
+                <Container direction="row">
+                    <NavLink to="/portfolio" tabIndex="-1">
+                        <Button>MY PORTFOLIO</Button>
+                    </NavLink>
+                    <NavLink to="/contact" tabIndex="-1">
+                        <GhostButton>CONTACT</GhostButton>
+                    </NavLink>
+                </Container>
             </Fade>
         </Container>
         <ImgContainer content="flex-end">

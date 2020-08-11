@@ -22,12 +22,12 @@ const Item = styled(Link)`
             font-weight: bold;
 
             & ~ ${Underline} {
-                width: ${({ width }) => `${width}px`};
-                transform: ${({ right, width }) => `translateX(-${right - width}px)`};
+                width: ${({ width }) => `calc(${width}px - 2em)`};
+                transform: ${({ right, width }) => `translateX(calc(-${right - width}px - 1em))`};
             }
         `}
 
-    &:hover ~${Underline} {
+    &:hover ~${Underline}, &:focus ~${Underline} {
         width: ${({ width }) => `calc(${width}px - 2em)`};
         transform: ${({ right, width }) => `translateX(calc(-${right - width}px - 1em))`};
         background-color: ${({ theme }) => theme.colors.main};
