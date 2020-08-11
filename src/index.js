@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ThemeProvider } from 'styled-components'
 
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import { store, persistor } from './Config'
-import { ThemeProvider } from 'styled-components'
 
 import App from './Routes'
 
 const theme = {
     colors: {
-        main: '#e8e8e8',
-        background: '#423c5c',
-        highlight: 'white',
+        main: '#edf0ef',
+        background: '#262829',
+        highlight: '#7adecd',
     },
 }
 

@@ -6,6 +6,14 @@ This portfolio was made using my own custom [React boilerplate](https://github.c
 
 I'm not an UI/UX designer but I did try my best to make it look pretty.
 
+---
+
+Small things I'm proud of in this project:
+
+-   All the Menu animations are 0 repaint animations (-> they don't trigger any repaints -> Butter smooth 60fps)
+
+---
+
 ## Features
 
 -   React 16
@@ -27,9 +35,8 @@ I'm not an UI/UX designer but I did try my best to make it look pretty.
 
 ## Installation
 
--   `git clone https://github.com/nipatiitti/React-boilerplate.git`
--   `cd React-boilerplate`
+-   `git clone https://github.com/nipatiitti/nipatiitti.com.git
+-   `cd nipatiitti.com`
 -   `yarn install`
--   Find and replace all of "name-here" with correct names
 -   `yarn start`
 -   visit `http://localhost:8080/`

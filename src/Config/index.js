@@ -23,7 +23,7 @@ const client = axios.create({
 
 // Config redux-persist
 const persistConfig = {
-    key: 'name-here',
+    key: 'nipatiitti-dot-com',
     storage,
     blacklist: [],
 }
