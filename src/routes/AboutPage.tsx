@@ -40,10 +40,10 @@ const AboutPage: FC = () => {
                 <BuzzwordBingo />
             </VStack>
             <Flex flex={1} flexDir={['row', 'row', 'row', 'column']} alignItems="center" justifyContent="center">
-                <LinkBox href="https://github.com/nipatiitti">
+                <LinkBox href="https://github.com/nipatiitti" aria-label="Check out my GitHub">
                     <FaGithubAlt color={colors.primary} fontSize="3rem" />
                 </LinkBox>
-                <LinkBox href="https://www.linkedin.com/in/nipatiitti/">
+                <LinkBox href="https://www.linkedin.com/in/nipatiitti/" aria-label="Check out my LinkedIn">
                     <FaLinkedinIn color={colors.primary} fontSize="3rem" />
                 </LinkBox>
             </Flex>
