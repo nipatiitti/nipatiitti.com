@@ -1,4 +1,4 @@
-import { Center, Flex, ListItem, UnorderedList, VStack } from '@chakra-ui/react'
+import { Center, Flex, Heading, Text, TextProps, VStack } from '@chakra-ui/react'
 import React, { FC } from 'react'
 import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 import styled, { useTheme } from 'styled-components'
@@ -21,22 +21,54 @@ const Background = styled(Center)`
     }
 `
 
+const Highlight: FC<TextProps> = ({ children, ...props }) => (
+    <Text as="span" fontWeight="bold" {...props}>
+        {children}
+    </Text>
+)
+
+const Spacer = styled.hr`
+    width: 100%;
+    border: 1px solid gray;
+    border-image: linear-gradient(
+            to right,
+            ${({ theme }) => theme.colors.primary_light_50},
+            ${({ theme }) => theme.colors.secondary_50}
+        )
+        1;
+`
+
 const AboutPage: FC = () => {
     const { colors } = useTheme()
 
     return (
         <Background id="about-page">
             <VStack flex={2} alignItems="start">
-                <Flex mr="1rem" alignItems="flex-end" flex={1}>
-                    <UnorderedList fontWeight="light">
-                        <ListItem>🎓 Studying engineering in Tampere University</ListItem>
-                        <ListItem>⚙️ Majoring in embedded and SoC</ListItem>
-                        <ListItem>🏭 I&apos;m Fullstack leaning to the front</ListItem>
-                        <ListItem>⌨️ Favorite languages are JS/TS, C/C++, python</ListItem>
-                        <ListItem>🔮 Devops with AWS-CDK and Docker</ListItem>
-                        <ListItem>🌱 Constantly learning and growing</ListItem>
-                    </UnorderedList>
+                <Flex as="section" mr="1rem" justifyContent="flex-end" flex={1} flexDir="column">
+                    <Heading as="h3">Did I catch your attention?</Heading>
+                    <Text color="whiteAlpha.600" mt="5px">
+                        That&apos;s good!
+                    </Text>
+                    <Text color="whiteAlpha.600" mt="5px">
+                        Let me introduce myself: I&apos;m <Highlight color="primary_light">Niilo</Highlight>, a third
+                        year engineering student at the{' '}
+                        <Highlight color="primary_light">University of Tampere</Highlight>. I study{' '}
+                        <Highlight color="whiteAlpha.800">Information Technology</Highlight> with my major being in{' '}
+                        <Highlight color="secondary">Electronics and Embedded Systems</Highlight>.
+                    </Text>
+                    <Text color="whiteAlpha.600" mt="5px">
+                        Despite my major, my roots are in the <Highlight color="highlight">Full Stack Web</Highlight>{' '}
+                        while leaning a bit more to the front end side of the diagram. Occasionally I also dapple in the{' '}
+                        <Highlight color="whiteAlpha.800">AI</Highlight> and{' '}
+                        <Highlight color="whiteAlpha.800">DevOps</Highlight> domains with technologies like{' '}
+                        <Highlight color="whiteAlpha.800">Tensorflow</Highlight> and{' '}
+                        <Highlight color="whiteAlpha.800">AWS-CDK</Highlight>. I can write many languages but my
+                        favorites and most fluents are <Highlight color="primary_light">TypeScript</Highlight>,{' '}
+                        <Highlight color="secondary">C/C++</Highlight> and{' '}
+                        <Highlight color="highlight">Python</Highlight>.
+                    </Text>
                 </Flex>
+                <Spacer />
                 <BuzzwordBingo />
             </VStack>
             <Flex flex={1} flexDir={['row', 'row', 'row', 'column']} alignItems="center" justifyContent="center">
