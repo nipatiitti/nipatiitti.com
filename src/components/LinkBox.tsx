@@ -3,14 +3,15 @@ import React, { FC, MouseEventHandler, useMemo, useRef, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 
 const HyperLink = styled.a`
-    width: 10em;
-    height: 10em;
-
     border-radius: 5px;
     border: 1px solid ${({ theme }) => theme.colors.primary};
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0.5rem;
 `
 
 const maxRadius = 120
@@ -81,10 +82,12 @@ const LinkBox: FC<LinkProps & { className?: string }> = ({ children, className, 
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 onMouseMove={onMouseMove}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                     background: radius
-                        ? `radial-gradient(circle at ${x}px ${y}px, ${color} 0%, ${colors.white_5} calc(0% + ${radius}px))`
-                        : colors.white_5,
+                        ? `radial-gradient(circle at ${x}px ${y}px, ${color} 0%, ${colors.white_2} calc(0% + ${radius}px))`
+                        : colors.white_2,
                 }}
             >
                 {children}
