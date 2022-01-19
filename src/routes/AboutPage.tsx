@@ -34,7 +34,7 @@ const AboutPage: FC = () => {
                         <ListItem>🏭 I&apos;m Fullstack leaning to the front</ListItem>
                         <ListItem>⌨️ Favorite languages are JS/TS, C/C++, python</ListItem>
                         <ListItem>🔮 Devops with AWS-CDK and Docker</ListItem>
-                        <ListItem>🌱 Constantly learnign and growing</ListItem>
+                        <ListItem>🌱 Constantly learning and growing</ListItem>
                     </UnorderedList>
                 </Flex>
                 <BuzzwordBingo />
