@@ -5,7 +5,7 @@
 
   // 1 ch in px when font-size is 1rem
   const chWidth = 2
-  const ch = 9 * chWidth
+  const ch = 11 * chWidth
 
   let runesAmount = $state(100)
   let chars = $state('')
@@ -48,13 +48,13 @@
 </script>
 
 <section
-  class="runes absolute flex h-full w-full flex-1 items-center justify-center overflow-hidden"
+  class="runes flex h-full w-full flex-1 items-center justify-center overflow-hidden"
   bind:clientWidth={width}
   bind:clientHeight={height}
 >
   <span class="text-ring" style="--total: {runesAmount}; --characterWidth: {chWidth}">
     {#each chars as char, i (`${char}-${i}`)}
-      <span transition:fade={{ delay: 100, duration: 1000 }} style="--index: {i}">
+      <span transition:fade={{ delay: 100, duration: 1000 }} class="font-mono" style="--index: {i}">
         <Glowing chance={0.15}>
           {char}
         </Glowing>
@@ -78,7 +78,6 @@
     --inner-angle: calc((360 / var(--total)) * 1deg);
     --radius: calc((var(--characterWidth, 1) / sin(var(--inner-angle))) * -1ch);
     font-weight: bold;
-    font-family: monospace;
     font-weight: lighter;
     text-transform: uppercase;
     font-size: 1rem;
