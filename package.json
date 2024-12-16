@@ -1,40 +1,28 @@
 {
-    "name": "nipatiitti.com",
-    "private": true,
-    "author": "Niilo Jaakkola, (niilo.jaakkola@icloud.com)",
-    "license": "MIT",
-    "keywords": [
-        "nipatiitti",
-        "nipatiitti.com",
-        "portfolio",
-        "website",
-        "nextjs"
-    ],
-    "scripts": {
-        "dev": "next dev",
-        "analyze": "ANALYZE=true next build",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@chakra-ui/react": "^1.7.3",
-        "@emotion/react": "^11",
-        "@emotion/styled": "^11",
-        "framer-motion": "^4",
-        "next": "12.0.7",
-        "react": "17.0.2",
-        "react-dom": "17.0.2",
-        "react-icons": "^4.3.1",
-        "styled-components": "^5.3.3"
-    },
-    "devDependencies": {
-        "@next/bundle-analyzer": "^12.0.8",
-        "@types/node": "16.11.12",
-        "@types/react": "17.0.37",
-        "@types/styled-components": "^5.1.20",
-        "eslint": "8.4.1",
-        "eslint-config-next": "12.0.7",
-        "typescript": "4.5.4"
-    }
+	"name": "nipatiitti.com",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"format": "prettier --write .",
+		"lint": "prettier --check ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"autoprefixer": "^10.4.20",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.6",
+		"prettier-plugin-tailwindcss": "^0.6.5",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"tailwindcss": "^3.4.9",
+		"typescript": "^5.0.0",
+		"vite": "^5.0.3"
+	}
 }

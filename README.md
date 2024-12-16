@@ -1,27 +1,38 @@
-# My CV Site
+# sv
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/44cb4ef7-fa96-4f6b-b7e5-65d3303826b9/deploy-status)](https://app.netlify.com/sites/nipatiitti/deploys)
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-Live [here](https://nipatiitti.com)
+## Creating a project
 
-This CV was made using Next.js, Chakra-ui and styled-components. This project is good example of what my frontend code looks at it's (2022) peak-ish.
+If you're seeing this, you've probably already done this step. Congrats!
 
-I'm not an UI/UX designer but I did try my best to make it look pretty.
+```bash
+# create a new project in the current directory
+npx sv create
 
----
+# create a new project in my-app
+npx sv create my-app
+```
 
-#### Small things I'm proud of in this project:
+## Developing
 
--   The page is fully SSG and works without JS.
--   The bundle is also relativily small (<150kB).
--   The design is responsive and works on all screen sizes.
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
----
+```bash
+npm run dev
 
-## Installation
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
--   `git clone https://github.com/nipatiitti/nipatiitti.com.git`
--   `cd nipatiitti.com`
--   `yarn install`
--   `yarn dev`
--   visit `http://localhost:3000/`
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
