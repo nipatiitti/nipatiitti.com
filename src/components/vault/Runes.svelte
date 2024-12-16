@@ -1,7 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition'
   import { runic } from '../../lib/utils/characterUtils'
-  import Glowing from './Glowing.svelte'
 
   // 1 ch in px when font-size is 1rem
   const chWidth = 2
@@ -54,10 +53,13 @@
 >
   <span class="text-ring" style="--total: {runesAmount}; --characterWidth: {chWidth}">
     {#each chars as char, i (`${char}-${i}`)}
-      <span transition:fade={{ delay: 100, duration: 1000 }} class="font-mono" style="--index: {i}">
-        <Glowing chance={0.15}>
-          {char}
-        </Glowing>
+      <span
+        transition:fade={{ delay: 100, duration: 1000 }}
+        class:alternative={Math.random() < 0.2}
+        class="font-mono"
+        style="--index: {i}"
+      >
+        {char}
       </span>
     {/each}
   </span>
@@ -85,6 +87,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(calc(var(--inner-angle) * var(--index))) translateY(var(--radius, -5ch));
+  }
+
+  .text-ring .alternative::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    width: 1ch;
+    height: 1ch;
+    background: #f858c5;
+    border-radius: 50%;
+    filter: blur(10px);
   }
 
   @keyframes rotate {
