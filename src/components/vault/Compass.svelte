@@ -1,22 +1,27 @@
 <script lang="ts">
+  import { accent, dark } from '$lib/utils/colors'
+  import { twMerge } from 'tailwind-merge'
   import Flourish from './Embellishes/Flourish.svelte'
   import Squiggle from './Embellishes/Squiggle.svelte'
+  import RandomCharacter from './RandomCharacter.svelte'
 
   type Props = {
-    color?: string
     relative?: number
+    size?: 'sm' | 'lg'
+    dir?: 'clockwise' | 'counterclockwise'
+    speed?: number
+    color?: string
   }
 
-  let { color = '#fdfae8', relative = 0.2 }: Props = $props()
+  let { relative = 0.2, size = 'sm', dir = 'clockwise', speed = 1, color = dark }: Props = $props()
 
   let width = $state(0)
   let height = $state(0)
 
-  let size = $derived(Math.min(width, height))
+  let side = $derived(Math.min(width, height))
 
-  // The corner square will have a central square and squiggles on the corners
-  let centralSquareSize = $derived(size * (1 - relative))
-  let cornerSquiggleSize = $derived((size * relative) / 2)
+  let centralSquareSize = $derived(side * (1 - relative))
+  let cornerSquiggleSize = $derived((side * relative) / 2)
 
   let [cornerSeed, centralSeed] = [new Date().getTime(), new Date().getTime() + 1]
 </script>
@@ -25,21 +30,27 @@
   <div class="central absolute" style="--rotation: {rotation}deg;">
     <Squiggle
       width={centralSquareSize}
-      intensity={2}
-      minIntensity={0.6}
+      intensity={size === 'lg' ? 1.3 : 1}
+      minIntensity={size === 'lg' ? 1 : 0.5}
       start="top"
       symmetry
       end="top"
       height={centralSquareSize}
       seed={centralSeed}
+      stroke={color}
     />
   </div>
 {/snippet}
 
 {#snippet cornerSide(rotation: number)}
-  <div class="corner" style="--rotation: {rotation}deg;">
+  <div class="corner flex items-center justify-center" style="--rotation: {rotation}deg;">
     <Flourish variant="square" size={`${cornerSquiggleSize}px`} seed={cornerSeed} />
     {@render glow(cornerSquiggleSize * 0.5)}
+    <RandomCharacter
+      set="alchemical"
+      class={twMerge('text-1xl absolute', size === 'lg' && 'text-2xl')}
+      style={`color: ${accent}`}
+    />
   </div>
 {/snippet}
 
@@ -53,7 +64,11 @@
   bind:clientHeight={height}
   style="position: relative;"
 >
-  <div class="compass flex aspect-square" style="width: {size}px; height: {size}px;">
+  <div
+    class="compass flex aspect-square"
+    style="width: {side}px; height: {side}px; --speed: {speed};"
+    class:counterclockwise={dir === 'counterclockwise'}
+  >
     <div class="corner flex flex-col items-center justify-between" style={`width: ${cornerSquiggleSize}px;`}>
       {@render cornerSide(-45)}
       {@render cornerSide(-135)}
@@ -90,10 +105,15 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: #65bbf7;
+    opacity: 0.5;
   }
 
   .compass {
     animation: rotate 60s linear infinite;
+  }
+
+  .compass.counterclockwise {
+    animation: rotate-ccw 60s linear infinite;
   }
 
   @keyframes rotate {
@@ -101,7 +121,16 @@
       transform: rotate(0deg);
     }
     100% {
-      transform: rotate(-360deg);
+      transform: rotate(calc(360deg * var(--speed)));
+    }
+  }
+
+  @keyframes rotate-ccw {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(calc(-360deg * var(--speed)));
     }
   }
 </style>

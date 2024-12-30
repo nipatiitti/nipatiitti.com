@@ -30,7 +30,7 @@
     flipX = false,
     flipY = false,
     debug = false,
-    stroke = '#fdfae8',
+    stroke = '#c2ac9b',
     symmetry = false,
     minIntensity = 0,
     'stroke-width': strokeWidth = 2,

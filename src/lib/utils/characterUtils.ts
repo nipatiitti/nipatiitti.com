@@ -8,7 +8,13 @@ function rangeToArray(start: number, end: number) {
 
 // Define the Unicode ranges for each block
 export const runic = rangeToArray(0x16a0, 0x16ea) // Runic
-export const alchemicalSymbols = rangeToArray(0x1f700, 0x1f77f) // Alchemical Symbols
+export const alchemical = rangeToArray(0x1f700, 0x1f773) // Alchemical Symbols
+
+export const characterSets = {
+  runic,
+  alchemical
+}
+export type CharacterSet = keyof typeof characterSets
 
 // Combine all arrays into one large array
-export const magicCharacters = [...runic, ...alchemicalSymbols]
+export const magicCharacters = [...runic, ...alchemical]
