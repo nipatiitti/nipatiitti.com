@@ -103,12 +103,13 @@
     --inner-angle: calc((360 / var(--total)) * 1deg);
     --radius: calc((var(--characterWidth, 1) / sin(var(--inner-angle))) * -1ch);
     font-weight: lighter;
+    transition: color 0.5s;
     font-size: 1rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(calc(var(--inner-angle) * var(--index))) translateY(var(--radius, -5ch));
-    will-change: transform opacity;
+    will-change: transform, opacity;
     z-index: 1;
   }
 

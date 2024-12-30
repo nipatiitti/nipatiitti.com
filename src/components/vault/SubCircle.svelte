@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { accent, dark } from '$lib/utils/colors'
   import Runes from './Runes.svelte'
 
   type Props = {
     index?: number
     char?: string
+    alt?: boolean
   }
 
-  let { index = 0, char = ' ' }: Props = $props()
+  let { index = 0, char = ' ', alt = false }: Props = $props()
 
-  let color = $state('#c2ac9b')
+  let color = $derived(alt ? accent : dark)
 </script>
 
 <div class="sub-circle" style="--index: {index}; --color: {color};">
@@ -30,11 +32,6 @@
 
     border: 1px solid var(--color);
     border-radius: 50%;
-
-    /* Reset rotation */
-    --baseline_rotation: calc(-1 * var(--inner-angle) * var(--index));
-    transform: rotate(var(--baseline_rotation));
-    animation: sub-circle 120s linear infinite;
   }
 
   .sub-circle::after {
@@ -44,14 +41,6 @@
     height: 70%;
     border: 1px solid var(--color);
     border-radius: 50%;
-  }
-
-  @keyframes sub-circle {
-    0% {
-      transform: rotate(calc(var(--baseline_rotation) + 0deg));
-    }
-    100% {
-      transform: rotate(calc(var(--baseline_rotation) + 360deg));
-    }
+    transition: border-color 0.5s;
   }
 </style>
