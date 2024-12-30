@@ -91,11 +91,11 @@
   }
 
   .text-ring.clockwise {
-    animation: rotate-cw 60s linear infinite;
+    animation: rotate-cw 180s linear infinite;
   }
 
   .text-ring.counterclockwise {
-    animation: rotate-ccw 60s linear infinite;
+    animation: rotate-ccw 180s linear infinite;
   }
 
   .text-ring [style*='--index'] {

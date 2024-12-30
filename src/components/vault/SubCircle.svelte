@@ -15,7 +15,7 @@
 
 <div class="sub-circle" style="--index: {index}; --color: {color};">
   <Runes glow={false} swapping={false} dir="counterclockwise" speed={3} {color} />
-  <span class="absolute text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
+  <span class="absolute text-xl transition-colors md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
     {char}
   </span>
 </div>

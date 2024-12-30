@@ -109,11 +109,11 @@
   }
 
   .compass {
-    animation: rotate 60s linear infinite;
+    animation: rotate 120s linear infinite;
   }
 
   .compass.counterclockwise {
-    animation: rotate-ccw 60s linear infinite;
+    animation: rotate-ccw 120s linear infinite;
   }
 
   @keyframes rotate {
