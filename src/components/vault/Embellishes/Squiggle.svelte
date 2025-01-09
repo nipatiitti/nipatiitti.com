@@ -68,7 +68,6 @@
         return { x: 0, y: 0 }
       case 'bottom':
         return { x: 0, y: svgHeight - choosingBoxHeight }
-      case 'middle':
       default:
         return { x: 0, y: svgHeight / 2 - choosingBoxHeight / 2 }
     }
@@ -80,7 +79,6 @@
         return { x: svgWidth - choosingBoxWidth, y: 0 }
       case 'bottom':
         return { x: svgWidth - choosingBoxWidth, y: svgHeight - choosingBoxHeight }
-      case 'middle':
       default:
         return { x: svgWidth - choosingBoxWidth, y: svgHeight / 2 - choosingBoxHeight / 2 }
     }

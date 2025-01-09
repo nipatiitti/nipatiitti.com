@@ -4,7 +4,6 @@ import type { CanvasComponent } from "./interface"
 export const WanderingTriangle: CanvasComponent = ({ x: initialX, y: initialY, r }) => {
   let x = initialX
   let y = initialY
-  let oldTime = 0
   const speed = 10
 
   let direction = Math.random() * Math.PI * 2
@@ -18,10 +17,7 @@ export const WanderingTriangle: CanvasComponent = ({ x: initialX, y: initialY, r
   }
 
   return {
-    draw: ({ time, ctx, size }) => {
-      const dt = oldTime ? time - oldTime : 1
-      oldTime = time
-
+    draw: ({ delta: dt, ctx, size }) => {
       const dx = Math.cos(direction) * speed * (dt / 1000)
       const dy = Math.sin(direction) * speed * (dt / 1000)
 

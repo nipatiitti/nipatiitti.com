@@ -1,31 +1,97 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
     extend: {
       fontSize: {
-        sm: '0.750rem',
-        base: '1rem',
-        xl: '1.333rem',
-        '2xl': '1.777rem',
-        '3xl': '2.369rem',
-        '4xl': '3.158rem',
-        '5xl': '4.210rem'
+        sm: "0.750rem",
+        base: "1rem",
+        xl: "1.333rem",
+        "2xl": "1.777rem",
+        "3xl": "2.369rem",
+        "4xl": "3.158rem",
+        "5xl": "4.210rem",
       },
       fontFamily: {
-        mono: ['IBM Plex Mono', 'monospace'],
-        heading: ['Nunito', 'serif'],
-        body: ['Noto Sans', 'serif']
+        mono: ["IBM Plex Mono", "monospace"],
+        heading: ["Nunito", "serif"],
+        body: ["Noto Sans", "serif"],
       },
       fontWeight: {
-        normal: '400',
-        bold: '700'
+        normal: "400",
+        bold: "700",
       },
-      colors: {}
-    }
+      colors: {
+        text: {
+          50: "#0d0d0d",
+          100: "#1a1a1a",
+          200: "#333333",
+          300: "#4d4d4d",
+          400: "#666666",
+          500: "#808080",
+          600: "#999999",
+          700: "#b3b3b3",
+          800: "#cccccc",
+          900: "#e6e6e6",
+          950: "#f2f2f2",
+        },
+        background: {
+          50: "#130d06",
+          100: "#261b0d",
+          200: "#4d3619",
+          300: "#735026",
+          400: "#996b33",
+          500: "#bf8640",
+          600: "#cc9e66",
+          700: "#d9b68c",
+          800: "#e6cfb3",
+          900: "#f2e7d9",
+          950: "#f9f3ec",
+        },
+        primary: {
+          50: "#110e09",
+          100: "#211c12",
+          200: "#423824",
+          300: "#635336",
+          400: "#856f47",
+          500: "#a68b59",
+          600: "#b8a27a",
+          700: "#c9b99c",
+          800: "#dbd1bd",
+          900: "#ede8de",
+          950: "#f6f3ee",
+        },
+        secondary: {
+          50: "#120c07",
+          100: "#25170e",
+          200: "#492f1d",
+          300: "#6e462b",
+          400: "#935d39",
+          500: "#b87447",
+          600: "#c6906c",
+          700: "#d4ac91",
+          800: "#e2c8b6",
+          900: "#f1e3da",
+          950: "#f8f1ed",
+        },
+        accent: {
+          50: "#120d08",
+          100: "#24190f",
+          200: "#48321e",
+          300: "#6c4b2d",
+          400: "#90653c",
+          500: "#b47e4b",
+          600: "#c3986f",
+          700: "#d2b193",
+          800: "#e1cbb7",
+          900: "#f0e5db",
+          950: "#f7f2ed",
+        },
+      },
+    },
   },
 
-  plugins: []
+  plugins: [],
 } satisfies Config

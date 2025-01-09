@@ -1,6 +1,7 @@
 <script lang="ts">
   import { accent, highlight, toRGB } from '$lib/utils/colors'
   import { onMount } from 'svelte'
+  import { TurningStar } from './TurningStar'
   import { WanderingCircle } from './WanderingCircle'
   import { WanderingTriangle } from './WanderingTriangle'
   import type { CanvasComponent, CanvasElement } from './interface'
@@ -14,8 +15,10 @@
 
   let children = $state<CanvasElement[]>([])
 
+  let time = 0
+
   const color = toRGB(accent)
-  const animate = (d: number) => {
+  const animate = (ms: number) => {
     if (!ctx || !canvas) return
 
     ctx.clearRect(0, 0, side, side)
@@ -25,12 +28,14 @@
 
       child.draw({
         ctx,
-        time: d,
+        delta: ms - time,
         size: {
           width: side,
           height: side
         }
       })
+
+      time = ms
 
       // Draw a line to every other element
       //   for (let j = i + 1; j < children.length; j += 3) {
@@ -48,7 +53,7 @@
       //   }
     }
 
-    // requestAnimationFrame(animate)
+    requestAnimationFrame(animate)
   }
 
   $effect(() => {
@@ -88,8 +93,9 @@
 
   $effect(() => {
     children = [
-      ...Array.from({ length: 6 }, () => createELement(WanderingCircle)),
-      ...Array.from({ length: 6 }, () => createELement(WanderingTriangle))
+      // ...Array.from({ length: 6 }, () => createELement(WanderingCircle)),
+      // ...Array.from({ length: 6 }, () => createELement(WanderingTriangle)),
+      TurningStar({ x: side / 2, y: side / 2, r: side / 2, points: 12 })
     ]
   })
 </script>

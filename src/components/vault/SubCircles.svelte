@@ -68,7 +68,6 @@
   .sub[style*='--index'] {
     width: var(--diameter);
     height: calc(var(--unitCircleRadius));
-    z-index: 1;
     position: absolute;
     display: flex;
 
