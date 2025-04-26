@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { alchemical } from '$lib/utils/characterUtils'
   import { fade } from 'svelte/transition'
-  import { alchemical } from '../../lib/utils/characterUtils'
   import SubCircle from './SubCircle.svelte'
 
   let width = $state(500)

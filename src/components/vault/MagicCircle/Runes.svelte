@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { runic } from '$lib/utils/characterUtils'
   import { highlight } from '$lib/utils/colors'
   import { fade } from 'svelte/transition'
-  import { runic } from '../../lib/utils/characterUtils'
 
   type Props = {
     dir?: 'clockwise' | 'counterclockwise'

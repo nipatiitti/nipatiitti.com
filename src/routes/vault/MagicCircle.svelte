@@ -1,9 +1,9 @@
 <script>
   import { accent, dark, highlight } from '$lib/utils/colors'
-  import Canvas from '../../components/vault/Canvas/Canvas.svelte'
-  import Compass from '../../components/vault/Compass.svelte'
-  import Runes from '../../components/vault/Runes.svelte'
-  import SubCircles from '../../components/vault/SubCircles.svelte'
+  import Canvas from '../../components/vault/MagicCircle/Canvas/Canvas.svelte'
+  import Compass from '../../components/vault/MagicCircle/Compass.svelte'
+  import Runes from '../../components/vault/MagicCircle/Runes.svelte'
+  import SubCircles from '../../components/vault/MagicCircle/SubCircles.svelte'
 </script>
 
 <div class="flex h-full w-full flex-col items-center justify-center gap-5">

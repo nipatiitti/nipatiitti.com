@@ -23,8 +23,6 @@ export const TurningStar: CanvasComponent<{ points?: number }> = ({
   const nOfTriangles = points / 3
   const angle = (Math.PI * 2) / nOfTriangles
 
-  console.log({ points, nOfTriangles, angle })
-
   const drawStar = (ctx: CanvasRenderingContext2D, r: number, points: number) => {
     for (let i = 0; i < nOfTriangles; i++) {
       drawTriangle(ctx, i)

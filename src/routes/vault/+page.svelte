@@ -1,10 +1,14 @@
 <script>
   import { dark } from '$lib/utils/colors'
+  import Clocks from './Clocks.svelte'
   import MagicCircle from './MagicCircle.svelte'
   import Page from './Page.svelte'
 </script>
 
 <main class="flex min-h-svh w-[100svw] flex-col items-center justify-center bg-[#141418]" style="--dark: {dark}">
+  <Page index={0}>
+    <Clocks />
+  </Page>
   <MagicCircle />
   <Page index={1}>
     <div class="flex h-full w-full flex-col items-center justify-center bg-background-950 px-10 text-center">
